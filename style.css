@@ -1,205 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 *
 {
     margin: 0px;
     padding: 0px;
-    scroll-behavior: smooth;
-}
-::-webkit-scrollbar
-{
-    width: 5px;
-    border-radius: 2px;
-}
-::-webkit-scrollbar-track
-{
-    background-color: yellow;
-}
-::-webkit-scrollbar-thumb
-{
-    background-color: rgb(111, 38, 1);
-    border-radius: 5px;
+    box-sizing: border-box;
 }
 body
 {
-    background: url("background.png");
-    background-size: cover;
+    background: url(background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow-X: hidden;
+    background-size: cover;
 }
-.head
+h1
 {
-    position: fixed;
+    color: aliceblue;
+    padding-top: 10vh;
+    text-transform: uppercase;
+    text-align: center;
 }
-.nav-bar
+.calculator
 {
     background-color: white;
-    box-shadow: 0px 2px 5px black;
-    display:flex;
-    justify-content: space-between;
-    z-index: 99;
-    width: 100vw;
+    width: max-content;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px white;
+    margin: auto;
+    margin-top: 10vh;
 }
-.input
+.screen
 {
-    position: absolute;
-    display: block;
-    margin: 2vh 1vw 0vw 1vw;
-    height: 20px;
-    width: 10vw;
-    font-size: 1vw;
-    padding: 3px;
-    border-radius: 20px;
+    margin: 0px 0px 10px 0px;
 }
-.search
+#display
 {
-    font-size: 4vh;
-    margin: 2vh 1vw 0vw 13vw;
+    text-align: right;
+    width: 30vh;
+    height: 5vh;
+    border-radius: 4px;
+    font-size: 2.5vh;
+    padding: 5px 10px;
+    border: 2px solid blue;
+    box-shadow: 0px 0px 8px rgb(4, 0, 255);
 }
-.menu
-{
-    display: flex;
-    justify-content: right;
-    list-style-type: none;
-    margin-right: 5vw;
-}
-.menu li
-{
-    display: block;
-    align-items: center;
-    margin: 2.5vh 1.5vw;
-}
-.menu li a
-{
-    color: rgb(0, 0, 0);
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0s;
-}
-.menu li a:hover
-{
-    border-bottom: 3px solid rgb(124, 29, 0);
-}
-.logo
-{
-    position: absolute;
-    right: 20px;
-    top: 0px;
-    width: 5vw;
-    background-color: white;
-    padding: 0.6vw;
-    border-radius: 3vw ;
-    box-shadow: 0px 3px 5px black;
-}
-.body
+.row
 {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100vw;
+    justify-content: space-evenly;
 }
-.image img
+button
 {
-    width: 100vmin;
-    height: 100vmin;
-    border-radius: 50%;
-    border: 15px solid white;
-    margin-left: -45vmin;
+    cursor: pointer;
+    font-size: 3.5vh;
+    font-weight: bold;
+    background-color: rgb(0, 7, 105);
+    color: rgb(255, 255, 255);
+    width: 6vh;
+    font-family: monospace;
+    height: 6vh;
+    border-radius: 3vh;
+    margin: 0.5vh;
+    border: 0px;
+    transition: 0.2s;
 }
-.theme
+button:hover
 {
-    color: rgb(138, 23, 23);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    font-size: 4vw;
-    width: 60vw;
+    background-color: rgb(77, 85, 202);
+    box-shadow: -5px 0px 7px blue inset;
 }
-.description
+.C
 {
-    color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 1.5vw;
-    text-align: justify;
-    padding: 2vw 2vw 2vw 0vw;
+    background-color:  rgb(255, 15, 15)
 }
-span
+.C:hover
 {
-    color: rgb(0, 0, 0);
-    font-size: 4.2vw;
+    background-color: rgb(250, 46, 46);
+    box-shadow: -5px 0px 7px rgb(255, 15, 15) inset;
 }
-.explore_more
+.equal
 {
-    text-decoration: none;
-    background:rgb(255, 217, 0);
-    border: 1px solid brown;
-    border-radius: 7px;
-    padding: 10px;
-    font-size: 1.5vw;
-    color: rgb(133, 4, 0);
-    transition: 0.5s;
+    background-color: rgb(255, 145, 0);
 }
-.explore_more:hover
+.equal:hover
 {
-    box-shadow: 0px 0px 10px black;
-    font-size: 1.7vw;
+    background-color: #ffa024;
+    box-shadow: -5px 0px 7px #e78300 inset;
 }
-footer
+.operator
 {
-    width:100vw;
-    height: 35vh;
-    background-color: rgb(52, 0, 0);
-    color: white;
-    display: flex; 
-    flex-wrap: wrap;
+    background-color: rgb(9, 129, 109);
 }
-.contact-us,.address,.maps
+.operator:hover
 {
-    font-size: 1.5vw;
-    margin: 3vw 0vw 3vw 3vw;
-    width: 30vw;
-    border-right: 2px solid white;
+    background-color: rgb(53, 182, 160);
+    box-shadow: -5px 0px 7px rgb(9, 129, 109) inset;
 }
-.maps
+.erase
 {
-    border-right: none;
-
+    background-color: rgb(206, 99, 255);
 }
-.contact-us p
+.erase:hover
 {
-    margin: 10px 0px;
-}
-.icons
-{
-    margin-top: 2vw;
-    display: flex;
-    justify-content: left;
-}
-.icons a
-{
-    margin:0vh 5vh;
-}
-.icons a i
-{
-    font-size: 1.5vw;
-    transition: 0.5s;
-}
-.icons a i:hover
-{
-    margin: -5px 0px 0px -5px;
-    font-size: 2vw;
-}
-.map
-{
-    width: 20vw;
-    height: 11.5vw;
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px yellow;
-    transition: 0.5s;
-}
-.map:hover
-{
-    box-shadow: 0px 0px 10px yellow; 
+    background-color: rgb(219, 141, 255);
+    box-shadow: -5px 0px 7px rgb(206, 99, 255) inset;
 }
